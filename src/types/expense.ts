@@ -8,7 +8,7 @@ export interface Expense {
 
 export type ExpenseContextType = {
   expenses: Expense[];
-  addExpense: (expense: Omit<Expense, 'id'>) => void;
+  addExpense: (expense: Omit<Expense, "id">) => void;
   editExpense: (id: string, expense: Partial<Expense>) => void;
   deleteExpense: (id: string) => void;
 };
