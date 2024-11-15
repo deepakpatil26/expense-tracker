@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { format } from 'date-fns';
-import { Pencil, Trash2, Save, X } from 'lucide-react';
-import { useExpenses } from '../context/ExpenseContext';
-import { Expense } from '../types/expense';
-import styles from '../styles/components/ExpenseList.module.css';
+import React, { useState } from "react";
+import { format } from "date-fns";
+import { Pencil, Trash2, Save, X } from "lucide-react";
+import { useExpenses } from "../context/ExpenseContext";
+import { Expense } from "../types/expense";
+import styles from "../styles/components/ExpenseList.module.css";
 
 export const ExpenseList: React.FC = () => {
   const { expenses, editExpense, deleteExpense } = useExpenses();
@@ -46,20 +46,27 @@ export const ExpenseList: React.FC = () => {
                   {editingId === expense.id ? (
                     <input
                       type="date"
-                      value={editForm.date || ''}
-                      onChange={(e) => setEditForm({ ...editForm, date: e.target.value })}
+                      value={editForm.date || ""}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, date: e.target.value })
+                      }
                       className={styles.editInput}
                     />
                   ) : (
-                    format(new Date(expense.date), 'MMM dd, yyyy')
+                    format(new Date(expense.date), "MMM dd, yyyy")
                   )}
                 </td>
                 <td className={styles.cell}>
                   {editingId === expense.id ? (
                     <input
                       type="text"
-                      value={editForm.description || ''}
-                      onChange={(e) => setEditForm({ ...editForm, description: e.target.value })}
+                      value={editForm.description || ""}
+                      onChange={(e) =>
+                        setEditForm({
+                          ...editForm,
+                          description: e.target.value,
+                        })
+                      }
                       className={styles.editInput}
                     />
                   ) : (
@@ -70,8 +77,10 @@ export const ExpenseList: React.FC = () => {
                   {editingId === expense.id ? (
                     <input
                       type="text"
-                      value={editForm.category || ''}
-                      onChange={(e) => setEditForm({ ...editForm, category: e.target.value })}
+                      value={editForm.category || ""}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, category: e.target.value })
+                      }
                       className={styles.editInput}
                     />
                   ) : (
@@ -82,8 +91,13 @@ export const ExpenseList: React.FC = () => {
                   {editingId === expense.id ? (
                     <input
                       type="number"
-                      value={editForm.amount || ''}
-                      onChange={(e) => setEditForm({ ...editForm, amount: parseFloat(e.target.value) })}
+                      value={editForm.amount || ""}
+                      onChange={(e) =>
+                        setEditForm({
+                          ...editForm,
+                          amount: parseFloat(e.target.value),
+                        })
+                      }
                       className={styles.editInput}
                     />
                   ) : (
@@ -93,19 +107,31 @@ export const ExpenseList: React.FC = () => {
                 <td className={styles.cellWhitespace}>
                   {editingId === expense.id ? (
                     <div className={styles.actionButtons}>
-                      <button onClick={() => handleSave(expense.id)} className={styles.saveButton}>
+                      <button
+                        onClick={() => handleSave(expense.id)}
+                        className={styles.saveButton}
+                      >
                         <Save size={18} />
                       </button>
-                      <button onClick={handleCancel} className={styles.cancelButton}>
+                      <button
+                        onClick={handleCancel}
+                        className={styles.cancelButton}
+                      >
                         <X size={18} />
                       </button>
                     </div>
                   ) : (
                     <div className={styles.actionButtons}>
-                      <button onClick={() => handleEdit(expense)} className={styles.editButton}>
+                      <button
+                        onClick={() => handleEdit(expense)}
+                        className={styles.editButton}
+                      >
                         <Pencil size={18} />
                       </button>
-                      <button onClick={() => deleteExpense(expense.id)} className={styles.deleteButton}>
+                      <button
+                        onClick={() => deleteExpense(expense.id)}
+                        className={styles.deleteButton}
+                      >
                         <Trash2 size={18} />
                       </button>
                     </div>

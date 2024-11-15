@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { PlusCircle } from 'lucide-react';
-import { useExpenses } from '../context/ExpenseContext';
-import styles from '../styles/components/ExpenseForm.module.css';
+import React, { useState } from "react";
+import { PlusCircle } from "lucide-react";
+import { useExpenses } from "../context/ExpenseContext";
+import styles from "../styles/components/ExpenseForm.module.css";
 
 const categories = [
-  'Food & Dining',
-  'Transportation',
-  'Shopping',
-  'Entertainment',
-  'Bills & Utilities',
-  'Others'
+  "Food & Dining",
+  "Transportation",
+  "Shopping",
+  "Entertainment",
+  "Bills & Utilities",
+  "Others",
 ];
 
 export const ExpenseForm: React.FC = () => {
   const { addExpense } = useExpenses();
   const [formData, setFormData] = useState({
-    description: '',
-    amount: '',
-    category: 'Food & Dining',
-    date: new Date().toISOString().split('T')[0]
+    description: "",
+    amount: "",
+    category: "Food & Dining",
+    date: new Date().toISOString().split("T")[0],
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,13 +27,13 @@ export const ExpenseForm: React.FC = () => {
       description: formData.description,
       amount: parseFloat(formData.amount),
       category: formData.category,
-      date: formData.date
+      date: formData.date,
     });
     setFormData({
-      description: '',
-      amount: '',
-      category: 'Food & Dining',
-      date: new Date().toISOString().split('T')[0]
+      description: "",
+      amount: "",
+      category: "Food & Dining",
+      date: new Date().toISOString().split("T")[0],
     });
   };
 
@@ -46,7 +46,9 @@ export const ExpenseForm: React.FC = () => {
             type="text"
             required
             value={formData.description}
-            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, description: e.target.value })
+            }
             className={styles.input}
             placeholder="Enter expense description"
           />
@@ -59,7 +61,9 @@ export const ExpenseForm: React.FC = () => {
             min="0"
             step="0.01"
             value={formData.amount}
-            onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, amount: e.target.value })
+            }
             className={styles.input}
             placeholder="Enter amount"
           />
@@ -68,11 +72,15 @@ export const ExpenseForm: React.FC = () => {
           <label className={styles.label}>Category</label>
           <select
             value={formData.category}
-            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, category: e.target.value })
+            }
             className={styles.select}
           >
             {categories.map((category) => (
-              <option key={category} value={category}>{category}</option>
+              <option key={category} value={category}>
+                {category}
+              </option>
             ))}
           </select>
         </div>
