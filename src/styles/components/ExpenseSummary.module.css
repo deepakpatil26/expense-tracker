@@ -1,0 +1,51 @@
+.container {
+  @apply bg-white rounded-lg shadow-md p-6 mb-6;
+}
+
+.title {
+  @apply text-xl font-semibold mb-4;
+}
+
+.summaryGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 mb-6;
+}
+
+.summaryCard {
+  @apply p-4 rounded-lg;
+}
+
+.totalCard {
+  @apply bg-blue-50;
+}
+
+.averageCard {
+  @apply bg-green-50;
+}
+
+.cardLabel {
+  @apply text-sm mb-1;
+}
+
+.cardLabelTotal {
+  @apply text-blue-600;
+}
+
+.cardLabelAverage {
+  @apply text-green-600;
+}
+
+.cardValue {
+  @apply text-2xl font-bold;
+}
+
+.cardValueTotal {
+  @apply text-blue-900;
+}
+
+.cardValueAverage {
+  @apply text-green-900;
+}
+
+.chartContainer {
+  @apply h-64;
+}

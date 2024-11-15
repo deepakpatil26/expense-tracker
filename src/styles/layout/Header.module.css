@@ -1,0 +1,19 @@
+.header {
+  @apply bg-white shadow-md;
+}
+
+.headerContent {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4;
+}
+
+.headerTitle {
+  @apply flex items-center;
+}
+
+.logo {
+  @apply h-8 w-8 text-blue-600;
+}
+
+.heading {
+  @apply ml-2 text-2xl font-bold text-gray-900;
+}

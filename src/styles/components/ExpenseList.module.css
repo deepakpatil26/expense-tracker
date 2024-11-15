@@ -1,0 +1,59 @@
+.container {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.tableWrapper {
+  @apply overflow-x-auto;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.tableHeader {
+  @apply bg-gray-50;
+}
+
+.headerCell {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.tableBody {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+.tableRow {
+  @apply hover:bg-gray-50;
+}
+
+.cell {
+  @apply px-6 py-4;
+}
+
+.cellWhitespace {
+  @apply px-6 py-4 whitespace-nowrap;
+}
+
+.editInput {
+  @apply w-full px-2 py-1 border rounded;
+}
+
+.actionButtons {
+  @apply flex space-x-2;
+}
+
+.editButton {
+  @apply text-blue-600 hover:text-blue-900;
+}
+
+.deleteButton {
+  @apply text-red-600 hover:text-red-900;
+}
+
+.saveButton {
+  @apply text-green-600 hover:text-green-900;
+}
+
+.cancelButton {
+  @apply text-gray-600 hover:text-gray-900;
+}
